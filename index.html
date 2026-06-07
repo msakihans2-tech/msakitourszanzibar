@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Msaki Tours Zanzibar TZ</title>
+<title>Msaki Tours Zanzibar TZ - Booking</title>
 
 <style>
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f5f7fa;
+    background: #f4f6f9;
 }
 
 /* HEADER */
 header {
     background: #0d6efd;
     color: white;
-    padding: 15px 20px;
+    padding: 15px;
     position: sticky;
     top: 0;
 }
@@ -40,31 +40,28 @@ nav ul li a {
 
 /* HERO */
 .hero {
-    background-image: url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
+    background: url('https://images.unsplash.com/photo-1500375592092-40eb2168fd21') center/cover;
     color: white;
-    padding: 120px 20px;
+    text-align: center;
+    padding: 100px 20px;
 }
 
 .hero h1 {
-    font-size: 50px;
+    font-size: 45px;
 }
 
 .btn {
-    display: inline-block;
     background: #ffc107;
-    padding: 12px 25px;
+    padding: 12px 20px;
     color: black;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
 }
 
-/* SECTIONS */
-.section {
-    padding: 60px 20px;
+/* TOURS */
+.container {
+    padding: 40px;
     text-align: center;
 }
 
@@ -78,17 +75,33 @@ nav ul li a {
 .card {
     background: white;
     padding: 20px;
-    width: 250px;
+    width: 260px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-/* GALLERY */
-.gallery img {
-    width: 250px;
-    height: 180px;
-    object-fit: cover;
+.card button {
+    background: #0d6efd;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* BOOKING FORM */
+.booking {
+    background: white;
+    padding: 40px;
+    margin: 20px;
     border-radius: 10px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
 }
 
 /* FOOTER */
@@ -99,7 +112,7 @@ footer {
     padding: 20px;
 }
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 .whatsapp {
     position: fixed;
     bottom: 20px;
@@ -109,7 +122,6 @@ footer {
     padding: 15px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
 }
 </style>
 </head>
@@ -120,9 +132,8 @@ footer {
 <nav>
 <h2>Msaki Tours Zanzibar TZ</h2>
 <ul>
-<li><a href="#">Home</a></li>
 <li><a href="#tours">Tours</a></li>
-<li><a href="#gallery">Gallery</a></li>
+<li><a href="#booking">Book</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -130,80 +141,102 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-<h1>Explore Zanzibar With Us</h1>
-<p>Unforgettable tours, beaches, culture & adventures</p>
-<a href="https://wa.me/255748667953" class="btn">Book on WhatsApp</a>
+<h1>Book Your Zanzibar Adventure</h1>
+<p>Easy booking for Safari Blue, Stone Town, Dolphin Tours & more</p>
+<a href="#booking" class="btn">Book Now</a>
 </section>
 
 <!-- TOURS -->
-<section class="section" id="tours">
-<h2>Our Tour Packages</h2>
+<section class="container" id="tours">
+<h2>Our Tours</h2>
 
 <div class="cards">
 
 <div class="card">
 <h3>Safari Blue</h3>
-<p>Full day ocean adventure, snorkeling & seafood.</p>
+<p>Full ocean adventure</p>
+<button onclick="selectTour('Safari Blue')">Book</button>
 </div>
 
 <div class="card">
 <h3>Stone Town Tour</h3>
-<p>Explore history, culture & old city of Zanzibar.</p>
-</div>
-
-<div class="card">
-<h3>Spice Farm Tour</h3>
-<p>Discover spices, herbs & local farming culture.</p>
+<p>Historic city experience</p>
+<button onclick="selectTour('Stone Town Tour')">Book</button>
 </div>
 
 <div class="card">
 <h3>Dolphin Tour</h3>
-<p>Swim and see dolphins in their natural habitat.</p>
+<p>Swim with dolphins</p>
+<button onclick="selectTour('Dolphin Tour')">Book</button>
+</div>
+
+<div class="card">
+<h3>Spice Farm</h3>
+<p>Explore Zanzibar spices</p>
+<button onclick="selectTour('Spice Farm Tour')">Book</button>
 </div>
 
 </div>
 </section>
 
-<!-- WHY US -->
-<section class="section">
-<h2>Why Choose Us?</h2>
-<p>
-✔ Trusted Local Guides<br>
-✔ Affordable Prices<br>
-✔ Safe & Comfortable Trips<br>
-✔ 24/7 Customer Support
-</p>
-</section>
+<!-- BOOKING FORM -->
+<section class="booking" id="booking">
+<h2>Book Your Tour</h2>
 
-<!-- GALLERY -->
-<section class="section" id="gallery">
-<h2>Gallery</h2>
+<form onsubmit="sendWhatsApp(); return false;">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="number" id="phone" placeholder="Phone Number" required>
 
-<div class="cards gallery">
-<img src="https://images.unsplash.com/photo-1516426122078-c23e76319801">
-<img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21">
-<img src="https://images.unsplash.com/photo-1528127269322-539801943592">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-</div>
+<select id="tour">
+<option value="">Select Tour</option>
+<option>Safari Blue</option>
+<option>Stone Town Tour</option>
+<option>Dolphin Tour</option>
+<option>Spice Farm Tour</option>
+</select>
+
+<input type="date" id="date" required>
+<input type="number" id="people" placeholder="Number of People" required>
+
+<button class="btn" type="submit">Send Booking via WhatsApp</button>
+</form>
 </section>
 
 <!-- CONTACT -->
-<section class="section" id="contact">
+<section class="container" id="contact">
 <h2>Contact Us</h2>
 <p>📞 +255 748 667 953</p>
-<p>📧 msakitourszanzibar@gmail.com</p>
 <p>📍 Zanzibar, Tanzania</p>
 </section>
 
 <footer>
-<p>© 2026 Msaki Tours Zanzibar TZ | All Rights Reserved</p>
+<p>© 2026 Msaki Tours Zanzibar TZ</p>
 </footer>
 
-<!-- WHATSAPP BUTTON -->
-<a class="whatsapp" href="https://wa.me/255748667953">
-💬 Chat
-</a>
+<a class="whatsapp" href="https://wa.me/255748667953">💬 Chat</a>
+
+<script>
+function selectTour(tour) {
+    document.getElementById("tour").value = tour;
+}
+
+function sendWhatsApp() {
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let tour = document.getElementById("tour").value;
+    let date = document.getElementById("date").value;
+    let people = document.getElementById("people").value;
+
+    let message = `Hello, I want to book:%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Tour: ${tour}%0A
+Date: ${date}%0A
+People: ${people}`;
+
+    window.open("https://wa.me/255748667953?text=" + message, "_blank");
+}
+</script>
 
 </body>
-</html>
 </html>
